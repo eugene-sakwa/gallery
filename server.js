@@ -13,7 +13,7 @@ const app = express();
 
 // connecting the database
 
-const MONGODB_URI = process.env.MONGODB_URI || config.mongoURI[app.settings.env]
+const MONGODB_URI = process.env.MONGODB_URI || config.mongoURI[app.settings.env] || 'mongodb+srv://eugene_don:eugene_don@ip-one.gjop4bg.mongodb.net/your-database-name?retryWrites=true&w=majority';
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true  },(err)=>{
     if (err) {
         console.log(err)
@@ -27,6 +27,15 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true 
 // db.once('open', ()=>{
 //     console.log('Database connected successfully')
 // })
+
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+    if (err) {
+        console.error('Error connecting to MongoDB:', err);
+    } else {
+        console.log('Connected to MongoDB');
+    }
+});
+
 
 
 
