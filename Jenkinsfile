@@ -15,6 +15,11 @@ pipeline{
                 sh 'npm run build' // Run the build script defined in package.json
             }
         }
+        stage('Test Code'){
+            steps{
+                sh 'npm test' // Run tests using npm
+            }
+        }
     }
 }
 
