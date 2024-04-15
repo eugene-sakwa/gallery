@@ -25,7 +25,7 @@ pipeline{
         //         sh 'npm test' // Run tests using npm
         //     }
         // }
-        
+
     }
     post{
       always {
@@ -33,9 +33,7 @@ pipeline{
         slackSend (
                 channel: '#jenkins-pipeline-ip-one',
                 color: COLOR_MAP[currentBuild.currentResult],
-                message: "${currentBuild.currentResult}: Job ${env.JOB_NAME} \n 
-                build ${env.BUILD_NUMBER} \n
-                Deployed Application: www.ip-one-eugene"
+                message: "${currentBuild.currentResult}: Job ${env.JOB_NAME} \n build ${env.BUILD_NUMBER} \n Deployed Application: www.ip-one-eugene"
             )
       }  
     }
