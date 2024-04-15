@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --exit"
+    "test": "mocha --exit",
+    "build": "echo 'Run your build command here'"
   },
   "keywords": [],
   "author": "",
